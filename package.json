@@ -4,7 +4,7 @@
   "description": "REST API for tictactoe game",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "node app.js"
   },
   "author": "alibek",
   "license": "ISC",
