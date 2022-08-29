@@ -1,0 +1,603 @@
+{
+	"info": {
+		"_postman_id": "22875c48-a15c-435e-9acd-f2b11c5c0dad",
+		"name": "tic-tac-toe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "start a game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{the_url}}/start",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"start"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "game started",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{the_url}}/start",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"start"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:07:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:07:50.471Z\",\n    \"room\": {\n        \"roomId\": \"gjwnqkp0\",\n        \"token_0\": \"26qr7i7a\",\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"isStarted\": false,\n        \"isEnded\": false,\n        \"winner\": null,\n        \"nextPlayer\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "join a game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{the_url}}/join/{{roomId}}",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"join",
+						"{{roomId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "player1 joined the game",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{the_url}}/join/{{roomId}}",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"join",
+								"{{roomId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:15:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:15:25.298Z\",\n    \"room\": {\n        \"token_1\": \"amst6sr6\",\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "player0 get game state",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token_player_0}}",
+						"type": "default"
+					},
+					{
+						"key": "roomid",
+						"value": "{{roomId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{the_url}}/state",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"state"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "player0 got game state",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_player_0}}",
+								"type": "default"
+							},
+							{
+								"key": "roomid",
+								"value": "{{roomId}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{the_url}}/state",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"state"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:16:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:16:54.452Z\",\n    \"room\": {\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"isEnded\": false,\n        \"isStarted\": true,\n        \"winner\": null,\n        \"nextPlayer\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "player1 get game state",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token_player_1}}",
+						"type": "default"
+					},
+					{
+						"key": "roomid",
+						"value": "{{roomId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{the_url}}/state",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"state"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "player1 got game state",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_player_1}}",
+								"type": "default"
+							},
+							{
+								"key": "roomid",
+								"value": "{{roomId}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{the_url}}/state",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"state"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:16:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:16:13.216Z\",\n    \"room\": {\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"isEnded\": false,\n        \"isStarted\": true,\n        \"winner\": null,\n        \"nextPlayer\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "player0 make a move",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token_player_0}}",
+						"type": "default"
+					},
+					{
+						"key": "roomid",
+						"value": "{{roomId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{the_url}}/move/:x/:y",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"move",
+						":x",
+						":y"
+					],
+					"variable": [
+						{
+							"key": "x",
+							"value": "1"
+						},
+						{
+							"key": "y",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "player0 made a move",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_player_0}}",
+								"type": "default"
+							},
+							{
+								"key": "roomid",
+								"value": "{{roomId}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{the_url}}/move/:x/:y",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"move",
+								":x",
+								":y"
+							],
+							"variable": [
+								{
+									"key": "x",
+									"value": "1"
+								},
+								{
+									"key": "y",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:17:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:17:49.145Z\",\n    \"room\": {\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            \"\",\n            0,\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"isEnded\": false,\n        \"isStarted\": true,\n        \"winner\": null,\n        \"nextPlayer\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "player1 make a move",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token_player_1}}",
+						"type": "default"
+					},
+					{
+						"key": "roomid",
+						"value": "{{roomId}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{the_url}}/move/:x/:y",
+					"host": [
+						"{{the_url}}"
+					],
+					"path": [
+						"move",
+						":x",
+						":y"
+					],
+					"variable": [
+						{
+							"key": "x",
+							"value": "1"
+						},
+						{
+							"key": "y",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "player1 made a move",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_player_1}}",
+								"type": "default"
+							},
+							{
+								"key": "roomid",
+								"value": "{{roomId}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{the_url}}/move/:x/:y",
+							"host": [
+								"{{the_url}}"
+							],
+							"path": [
+								"move",
+								":x",
+								":y"
+							],
+							"variable": [
+								{
+									"key": "x",
+									"value": "1"
+								},
+								{
+									"key": "y",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 16:18:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"dts\": \"2022-08-29T16:18:58.464Z\",\n    \"room\": {\n        \"state\": [\n            \"\",\n            \"\",\n            \"\",\n            1,\n            0,\n            \"\",\n            \"\",\n            \"\",\n            \"\"\n        ],\n        \"isEnded\": false,\n        \"isStarted\": true,\n        \"winner\": null,\n        \"nextPlayer\": 0\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "the_url",
+			"value": "http://localhost:6000",
+			"type": "default"
+		},
+		{
+			"key": "roomId",
+			"value": "gjwnqkp0",
+			"type": "default"
+		},
+		{
+			"key": "token_player_0",
+			"value": "26qr7i7a",
+			"type": "default"
+		},
+		{
+			"key": "token_player_1",
+			"value": "amst6sr6",
+			"type": "default"
+		}
+	]
+}
