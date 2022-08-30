@@ -58,6 +58,7 @@ global.colors = require("colors");
   }));
 
 
+  app.use(route.get("/ping", tictactoe.ping));
   app.use(route.post("/start", tictactoe.start));
   app.use(route.post("/join/:roomId", tictactoe.join));
 
