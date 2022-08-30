@@ -6,6 +6,20 @@ tictac.rooms = {};
 
 
 
+
+module.exports.ping = async (ctx) => {
+  console.log("ping".green);
+
+  ctx.body = {
+    success: true,
+    dts: (new Date())
+  }
+};
+
+
+
+
+
 module.exports.start = async (ctx) => {
   console.log("Start".green);
 
