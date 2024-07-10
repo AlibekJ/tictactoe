@@ -12,3 +12,5 @@ Install dependencies:
 Run the code:
 
 ```npm test```
+
+ATTENTION: Zip up your code and email it to me. Don't forget to CC your recruiter.
