@@ -34,19 +34,7 @@ global.colors = require("colors");
 
   app.use(compress())
   app.use(logger());
-
-  app.use(koaBody({
-    multipart: true,
-    jsonLimit: 10000000 * 1024 * 1024, //!!! Set realistic limits
-    formLimit: 10000000 * 1024 * 1024,
-    textLimit: 10000000 * 1024 * 1024,
-    maxFields: 1000000,
-    maxFieldsSize: 20000 * 1024 * 1024,
-    formidable: {
-      maxFields: 10000000,
-      maxFieldsSize: 200000 * 1024 * 1024,
-    }
-  }));
+  app.use(koaBody());
 
 
 
